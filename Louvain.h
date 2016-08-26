@@ -42,6 +42,7 @@ public:
 
 	size_t num_nodes() const;
 	size_t num_communities() const;
+	vector<vector<int>> communities() const;
 
 	WeightType modularity() const;
 };

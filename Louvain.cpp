@@ -196,3 +196,12 @@ void Louvain::output_outline(ostream& out)
 	out << "#Communities: " << num_communities() << endl;
 	out << "Q: " << modularity() << endl;
 }
+
+vector<vector<int>> Louvain::communities() const
+{
+	vector<vector<int>> comms(num_communities(), vector<int>());
+	for (int i = 0; i < _n2c.size(); i++) {
+		comms[_n2c[i]].push_back(i);
+	}
+	return comms;
+}

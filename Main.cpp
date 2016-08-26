@@ -33,5 +33,14 @@ int main(int argc, char* argv[])
 	cout << "Completed" << endl;
 	cout << "Time: " << end - start << " s" << endl;
 
+	vector<vector<int>> comms = lou.communities();
+	for (int i = 0; i < comms.size(); i++) {
+		cout << "Community " << i << ":";
+		for (const auto& node : comms[i]) {
+			cout << " " << node;
+		}
+		cout << endl;
+	}
+
 	return 0;
 }
